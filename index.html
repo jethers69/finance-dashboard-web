@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Dashboard - Your money, clearly.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Flow AI - Wealth intelligence. In your pocket.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,9 +13,17 @@
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: {
-                            blue: '#3B6FE8',
-                            dark: '#0A0E1A',
-                            slate: '#0F1B2D',
+                            deep: '#030712', 
+                            accent: '#6366F1', 
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
                         }
                     }
                 }
@@ -23,96 +31,128 @@
         }
     </script>
     <style>
-        .gradient-text {
-            background: linear-gradient(to right, #4F8EF7, #2563EB);
+        .premium-gradient {
+            background: linear-gradient(to right, #818CF8, #C084FC, #3B82F6);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradient 5s linear infinite;
         }
-        .hero-bg {
-            background: linear-gradient(135deg, #0A0E1A 0%, #0F1B2D 50%, #0D2137 100%);
+        .hero-pattern {
+            background-color: #030712;
+            background-image: radial-gradient(#1f2937 1px, transparent 1px);
+            background-size: 30px 30px;
         }
     </style>
 </head>
-<body class="bg-brand-dark text-white font-sans antialiased">
+<body class="bg-brand-deep text-gray-100 font-sans antialiased">
 
-    <nav class="fixed w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="icon.png" alt="Finance Dashboard Logo" class="w-10 h-10 rounded-xl shadow-lg">
-                <span class="text-xl font-bold tracking-tight">Finance Dashboard</span>
+    <nav class="fixed w-full z-50 bg-brand-deep/70 backdrop-blur-2xl border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="icon.png" alt="Flow AI Logo" class="w-12 h-12 rounded-2xl shadow-xl ring-1 ring-white/10 hover:rotate-6 transition-transform">
+                <span class="text-3xl font-extrabold tracking-tighter text-white">Flow<span class="text-brand-accent">AI</span></span>
             </div>
-            <a href="#download" class="bg-brand-blue hover:bg-blue-600 text-white px-5 py-2 rounded-full font-medium transition-colors shadow-[0_4px_14px_0_rgba(59,111,232,0.39)]">
-                Get the App
+            <a href="#download" class="bg-brand-accent hover:bg-brand-accent/80 text-white px-7 py-3 rounded-full font-semibold transition-all hover:scale-105 shadow-lg shadow-indigo-900/40">
+                Install Flow AI
             </a>
         </div>
     </nav>
 
-    <section class="hero-bg min-h-screen flex items-center pt-24 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div>
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                    Master your wealth.<br>
-                    <span class="gradient-text">Your money, clearly.</span>
+    <section class="hero-pattern min-h-screen flex items-center pt-28 pb-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16 items-center relative z-10">
+            
+            <div class="md:col-span-7">
+                <div class="inline-flex items-center gap-2 bg-indigo-950/70 border border-indigo-800 px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-indigo-300">
+                    <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                    Powered by Gemini AI
+                </div>
+                <h1 class="text-6xl md:text-8xl font-extrabold leading-[0.95] tracking-tighter mb-8">
+                    Master your <br>wealth with <span class="premium-gradient">Flow AI</span>
                 </h1>
-                <p class="text-lg text-white/60 mb-8 max-w-lg leading-relaxed">
-                    A smart, offline-first financial assistant that tracks your expenses, manages your goals, and offers AI-driven insights to help you save more.
+                <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl leading-relaxed">
+                    A gorgeous, offline-first assistant that tracks every dollar, simplifies your goals, and uses advanced intelligence to help you save effortlessly.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4" id="download">
-                    <a href="https://github.com/jethers69/finance-dashboard-web/releases/download/v1.0.1/app-release.apk" class="flex items-center justify-center gap-2 bg-white text-brand-dark px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-transform hover:scale-105">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 12h-3v-4h-5v4h-3l5.5 5.5 5.5-5.5zM4 19.5v-2h16v2H4z"/></svg>
-                        Download for Android
+                <div class="flex flex-col sm:flex-row gap-6 items-start" id="download">
+                    <a href="https://github.com/jethers69/finance-dashboard-web/releases/download/v1.0.0/app-release.apk" class="group flex items-center justify-center gap-3 bg-white text-brand-deep px-10 py-5 rounded-3xl font-bold text-lg hover:bg-gray-100 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 12h-3v-4h-5v4h-3l5.5 5.5 5.5-5.5zM4 19.5v-2h16v2H4z"/></svg>
+                        Get Flow AI v1.0.1
+                    </a>
+                    <p class="text-gray-600 max-w-xs pt-2">Requires Android 5.0+ <br>57.6 MB • 100% Free & Private</p>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 relative mx-auto w-full max-w-[360px] group">
+                <div class="absolute inset-0 bg-brand-accent blur-[120px] opacity-20 rounded-full group-hover:opacity-40 transition-opacity"></div>
+                <div class="relative bg-black rounded-[50px] border-[14px] border-[#1C1C1E] shadow-2xl shadow-indigo-950 aspect-[1/2] overflow-hidden group-hover:scale-105 group-hover:-rotate-1 transition-transform duration-500 ease-out">
+                    <img src="screenshot.jpg" alt="Flow AI App Preview" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-28 bg-[#050914] border-t border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-5xl md:text-6xl font-extrabold tracking-tighter mb-6">Everything you need, nothing you don't.</h2>
+                <p class="text-xl text-gray-500">Flow AI is designed to be fast, invisible, and exceptionally intelligent.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-brand-deep p-10 rounded-3xl border border-gray-800 group hover:border-brand-accent/50 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-accent/10 text-brand-accent flex items-center justify-center mb-10 ring-1 ring-brand-accent/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight mb-4 text-white">Advanced AI Advisor</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">Chat naturally with your own financial AI powered by Gemini. Ask where you're overspending or how to optimize your savings rate instantly.</p>
+                </div>
+
+                <div class="bg-brand-deep p-10 rounded-3xl border border-gray-800 group hover:border-green-800/50 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-green-500/10 text-green-400 flex items-center justify-center mb-10 ring-1 ring-green-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight mb-4 text-white">Ultimate Privacy</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">Your data stays with you. Flow AI uses a local SQLite database, meaning it works 100% offline. Zero tracking, zero cloud syncing required.</p>
+                </div>
+
+                <div class="bg-brand-deep p-10 rounded-3xl border border-gray-800 group hover:border-amber-800/50 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-10 ring-1 ring-amber-500/30 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0-2.08-.402-2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-white tracking-tight">Precise Goal Tracking</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">Whether it’s a new camera or an emergency fund, set savings targets and watch your progress bar fill up as you log your savings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-28 bg-brand-deep border-t border-gray-800/60" id="developer">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative mx-auto max-w-sm group">
+                <div class="absolute inset-0 bg-brand-accent blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <img src="user.jpg" alt="Developer of Flow AI" class="relative rounded-full aspect-square object-cover shadow-2xl ring-4 ring-gray-800/40 hover:scale-105 transition-transform duration-500 ease-out">
+            </div>
+
+            <div>
+                <div class="text-sm font-bold text-brand-accent uppercase tracking-widest mb-4">Meet the Visionary</div>
+                <h2 class="text-5xl md:text-6xl font-extrabold tracking-tighter mb-8 text-white">Creator of Flow AI.</h2>
+                <p class="text-xl text-gray-400 leading-relaxed mb-10">
+                    Hi, I'm <span class="text-white font-semibold">Jethers</span>. I built Flow AI because I was tired of beautiful finance apps that didn't help me save and generic finance apps that didn't handle privacy. I combine my passion for Flutter, Gemini AI, and user experience to build tools that truly optimize your wealth journey.
+                </p>
+                
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/jethers69" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                 </div>
-                <p class="mt-4 text-sm text-white/40">Requires Android 5.0+ • Free forever • 57.6 MB</p>
-            </div>
-            
-            <div class="relative mx-auto w-full max-w-[320px]">
-                <div class="absolute inset-0 bg-brand-blue blur-[80px] opacity-30 rounded-full"></div>
-                <div class="relative bg-[#1C1C1E] rounded-[40px] border-[8px] border-gray-800 shadow-2xl aspect-[1/2] flex items-center justify-center overflow-hidden">
-                    <img src="screenshot.jpg" alt="Finance Dashboard App Preview" class="object-cover w-full h-full">
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-brand-dark">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Everything you need to succeed</h2>
-                <p class="text-white/50">Designed to be fast, private, and exceptionally smart.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-brand-blue/50 transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-blue-500/20 text-brand-blue flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">AI Advisor</h3>
-                    <p class="text-white/60 leading-relaxed">Chat with your personal Finance AI powered by Gemini. Ask where you're overspending or how to optimize your budget.</p>
-                </div>
-
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-brand-blue/50 transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-green-500/20 text-green-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Offline-First</h3>
-                    <p class="text-white/60 leading-relaxed">No internet? No problem. Log transactions locally with SQLite and automatically sync them securely to the cloud when you're back online.</p>
-                </div>
-
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-brand-blue/50 transition-colors">
-                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0-2.08-.402-2.599-1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Goal Tracking</h3>
-                    <p class="text-white/60 leading-relaxed">Set precise savings targets. Whether it's a new camera or an emergency fund, watch your progress bar fill up over time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="border-t border-white/10 bg-brand-dark py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="text-white/40">© 2026 Jethers. All rights reserved.</p>
+    <footer class="border-t border-gray-800 bg-brand-deep py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-4xl font-extrabold tracking-tighter mb-6 text-white">Flow<span class="text-brand-accent">AI</span></div>
+            <p class="text-gray-500 max-w-lg mx-auto leading-relaxed">© 2026 Jethers. All rights reserved. <br>Wealth intelligence, simplified.</p>
         </div>
     </footer>
 
