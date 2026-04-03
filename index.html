@@ -43,7 +43,7 @@
             background-image: radial-gradient(#1f2937 1px, transparent 1px);
             background-size: 30px 30px;
         }
-        /* New Floating Animation for the 3D Image */
+        /* Floating Animation for the 3D Image */
         .floating-app {
             animation: float 6s ease-in-out infinite;
         }
@@ -51,6 +51,15 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-18px); }
             100% { transform: translateY(0px); }
+        }
+        /* Shadow Animation that syncs with the floating */
+        .shadow-pulse {
+            animation: shadowPulse 6s ease-in-out infinite;
+        }
+        @keyframes shadowPulse {
+            0% { transform: translateX(-50%) scale(1); opacity: 0.6; filter: blur(8px); }
+            50% { transform: translateX(-50%) scale(0.85); opacity: 0.2; filter: blur(12px); }
+            100% { transform: translateX(-50%) scale(1); opacity: 0.6; filter: blur(8px); }
         }
     </style>
 </head>
@@ -83,7 +92,10 @@
                     A gorgeous, offline-first assistant that tracks every dollar, simplifies your goals, and uses advanced intelligence to help you save effortlessly.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 items-start" id="download">
-                    <a href="https://github.com/jethers69/finance-dashboard-web/releases/download/v1.0.2/app-release.apk" class="group flex items-center justify-center gap-3 bg-white text-brand-deep px-10 py-5 rounded-3xl font-bold text-lg hover:bg-gray-100 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20">
+                    <a href="https://github.com/jethers69/finance-dashboard-web/releases/download/v1.0.2/app-release.apk" 
+                       data-goatcounter-click="download-app-v1-0-2"
+                       data-goatcounter-title="APK Download Clicked"
+                       class="group flex items-center justify-center gap-3 bg-white text-brand-deep px-10 py-5 rounded-3xl font-bold text-lg hover:bg-gray-100 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 12h-3v-4h-5v4h-3l5.5 5.5 5.5-5.5zM4 19.5v-2h16v2H4z"/></svg>
                         Get Flow AI v1.0.2
                     </a>
@@ -91,10 +103,14 @@
                 </div>
             </div>
             
-            <div class="md:col-span-5 relative mx-auto w-full max-w-[480px] group floating-app">
+            <div class="md:col-span-5 relative mx-auto w-full max-w-[480px] group">
                 <div class="absolute inset-0 bg-brand-accent blur-[100px] opacity-30 rounded-full group-hover:opacity-50 transition-opacity duration-700 ease-in-out"></div>
                 
-                <img src="3d.png" alt="Flow AI 3D App Preview" class="relative z-10 w-full h-auto object-contain drop-shadow-2xl group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                <div class="absolute -bottom-4 left-1/2 w-[70%] h-[20px] bg-black rounded-[100%] z-0 shadow-pulse pointer-events-none"></div>
+                
+                <div class="relative z-10 floating-app">
+                    <img src="3d.png" alt="Flow AI 3D App Preview" class="w-full h-auto object-contain drop-shadow-2xl group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                </div>
             </div>
 
         </div>
